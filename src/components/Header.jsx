@@ -20,7 +20,7 @@ const Header = ({ menu }) => {
         )}
       </nav>
       <img
-        src="/desktop/image-header.jpg"
+        src={!menu ? "/desktop/image-header.jpg" : "/mobile/image-header.jpg"}
         alt="img-header"
         className="header-background"
       />

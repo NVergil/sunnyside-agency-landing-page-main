@@ -130,6 +130,7 @@ header {
   top: 0;
   z-index: -1;
   object-fit: cover;
+  object-position: bottom;
 }
 
 header .title {
@@ -140,6 +141,7 @@ header .title {
   font-size: 3.5rem;
   margin-top: 5rem;
   margin-bottom: 7rem;
+  letter-spacing: 7px;
 }
 
 .arrow {
@@ -165,6 +167,7 @@ header .title {
     font-family: var(--font-fraunces);
     color: var(--very-dark-desaturated-blue);
     font-size: 2.5rem;
+    font-weight: 900;
   }
   & .description {
     font-family: var(--font-barlow);
@@ -226,9 +229,9 @@ header .title {
     justify-content: center;
     align-items: center;
     max-width: 370px;
-    bottom: 3.7rem;
+    bottom: 10%;
     text-align: center;
-    
+
     & .title {
       font-family: var(--font-fraunces);
       font-size: 1.75rem;
@@ -236,10 +239,12 @@ header .title {
       text-transform: capitalize;
       margin-bottom: 1.75rem;
     }
-    & .graphic, ._1 {
+    & .graphic,
+    ._1 {
       color: var(--dark-desaturated-cyan);
     }
-    & .photography, ._2 {
+    & .photography,
+    ._2 {
       color: var(--dark-blue);
     }
     & ._1 {
@@ -365,7 +370,7 @@ header .title {
       align-items: center;
       gap: 1.5rem;
       & svg {
-        color: #2C7566;
+        color: #2c7566;
         transition: color 75ms ease-in-out;
         cursor: pointer;
 
@@ -378,12 +383,13 @@ header .title {
 }
 
 .ant-dropdown {
-  width: 90%;
+  width: 100%;
   & .ant-dropdown-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    margin-left: 3rem;
     gap: 1rem;
 
     & .ant-dropdown-menu-title-content a {
@@ -404,15 +410,40 @@ header .title {
 }
 
 .attribution {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: 12px;
   text-align: center;
+  font-family: var(--font-barlow);
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
+@media screen and (max-width: 1023px) {
+  .content_1 {
+    & .title {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header .title {
+    font-size: 3rem;
+  }
+}
+
 @media screen and (max-width: 678px) {
+  header {
+    min-height: 550px;
+    & .title {
+      margin-bottom: 10%;
+    }
+    & .navbar {
+      padding-inline: 1.5rem;
+    }
+  }
   .cards-container {
     display: flex;
     flex-direction: column;
@@ -426,7 +457,15 @@ header .title {
       order: -1;
     }
   }
-  
+  .content_1 {
+    padding: 4rem 2rem;
+    text-align: center;
+    gap: 1.2rem;
+    & .learn-more {
+      align-self: center;
+    }
+  }
+
   .content_2 .image-info-cards {
     flex-direction: column-reverse;
   }
@@ -435,5 +474,45 @@ header .title {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  header .title {
+    font-size: 2.5rem;
+  }
+  .content_2 {
+    & .image-info-cards {
+      & .description {
+        font-size: 1.05rem;
+        padding: 0.7rem;
+      }
+    }
+  }
+  .testimonials-container {
+    padding-block: 3.5rem;
+    & .title {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    & .testimonials-cards-container {
+      gap: 4rem;
+      & .testimonial-card {
+        & .avatar {
+          margin-bottom: 2.5rem;
+        }
+        & .description {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+  .footer-images {
+    margin-top: 2rem;
+  }
+  .footer-section {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
   }
 }
